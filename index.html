@@ -1,0 +1,162 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Baker vs Shannon</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <div class='container'>
+    <div class='header'>
+      <div class="portrait-container">
+        <img src='assets/images/tom_small.jpg' class="portrait" />
+      </div>
+      <div class='title-container'>
+        <img src='assets/images/title.png' />
+      </div>
+      <div class="portrait-container">
+        <img src='assets/images/sarah_small.jpg' class="portrait" />
+      </div>
+    </div>
+
+    <h1><i class="fas fa-star fa-2x heading-star"></i>The Countdown is on!</h1>
+    <div class='text-container'>
+      <div class='text-container-inner'>
+        <p>
+          <strong>Ladies and Gentlemen!</strong>
+        </p>
+        <p>
+          The moment you've all been waiting for!
+        </p>
+        <p>
+          That's right folks, ten years after their first meeting, <strong>Baker vs Shannon</strong> will be held on
+          <strong>Saturday 2nd February 2019</strong>.
+        </p>
+        <p>
+          There were many out there who were convinced it was never going to happen, and that Tom would never get his
+          arse in gear and pop the question. Even Auntie Arlene had almost given up hope! But in 2016, Tom finally got
+          down on one knee and played the best game of Scrabble of his life. Sarah said "Yes" (eventually), and after a
+          long engagement, the main event is not far away.
+        </p>
+        <p>
+          <strong>So dust off your morning suits, fix your fascinator, and get ready for the party of the year!</strong>
+        </p>
+      </div>
+    </div>
+
+    <div id="clockdiv">
+      <div>
+        <div class="days"></div>
+        <div class="smalltext">Days</div>
+      </div>
+      <div>
+        <div class="hours"></div>
+        <div class="smalltext">Hours</div>
+      </div>
+      <div>
+        <div class="minutes"></div>
+        <div class="smalltext">Minutes</div>
+      </div>
+      <div>
+        <div class="seconds"></div>
+        <div class="smalltext">Seconds</div>
+      </div>
+    </div>
+
+    <h1><i class="fas fa-star fa-2x heading-star"></i>The Venue</h1>
+    <div class='text-container'>
+      <img src='assets/images/beamish_hall.jpg' class='right'>
+      <div class='text-container-inner'>
+        <p>The North East of England has dozens of beautiful wedding destinations.</p>
+        <p>
+          However, located within the countryside of County Durham, <strong>Beamish Hall Hotel</strong> is definitely
+          among the most special.
+        </p>
+        <p>
+          The hotel, which is a stones throw away from Beamish Open Air Museem is a converted 13th century manor house.
+          The wedding ceremony will take place in the Shafto Hall, with the wedding breakfast and reception following
+          afterwards in the Winter Gardens.
+        </p>
+        <p>
+          Tom and Sarah have booked exclusive use of the hotel for the day of the wedding, meaning that the only people
+          on site will be their families and friends. If you've been invited to stay at the hotel on the night of the
+          wedding, you should have had information from the bride or groom. If not, please get in touch ASAP!
+        </p>
+      </div>
+      <div class='text-container-inner'>
+        <p class='right'>
+          Beamish Hall's postal address is:<br><br>
+          <strong>
+            Beamish Hall Hotel<br>
+            Coppy Lane<br>
+            Beamish<br>
+            Stanley<br>
+            DH9 0YB<br><br>
+          </strong>
+
+          Phone number: <strong>01207 233 733</strong>
+        </p>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2294.8488256787914!2d-1.6734641838243107!3d54.88802246581876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e78e1955eb419%3A0x3eeb4991b5ad907d!2sBeamish+Hall+Hotel!5e0!3m2!1sen!2suk!4v1537285257491"
+        width="450" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+
+
+
+
+
+  </div>
+</body>
+
+<script type="text/javascript">
+  function getTimeRemaining(endtime) {
+    var t = Date.parse(endtime) - Date.parse(new Date());
+    var seconds = Math.floor((t / 1000) % 60);
+    var minutes = Math.floor((t / 1000 / 60) % 60);
+    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+
+    return {
+      'total': t,
+      'days': days,
+      'hours': hours,
+      'minutes': minutes,
+      'seconds': seconds
+    };
+  }
+
+  function initializeClock(id, endtime) {
+    var clock = document.getElementById(id);
+    var daysSpan = clock.querySelector('.days');
+    var hoursSpan = clock.querySelector('.hours');
+    var minutesSpan = clock.querySelector('.minutes');
+    var secondsSpan = clock.querySelector('.seconds');
+
+    function updateClock() {
+      var t = getTimeRemaining(endtime);
+
+      daysSpan.innerHTML = t.days;
+      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+      if (t.total <= 0) {
+        clearInterval(timeinterval);
+      }
+    }
+
+    updateClock();
+    var timeinterval = setInterval(updateClock, 1000);
+  }
+
+  var deadline = new Date(Date.parse('2019/02/02 12:30:00'));
+  initializeClock('clockdiv', deadline);
+</script>
+
+</html>
