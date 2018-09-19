@@ -1,70 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
 body {
-  font-family: 'lato', sans-serif; }
-  body h1 {
-    font-size: 4em;
-    font-weight: bold; }
-  body .heading-star {
-    position: relative;
-    left: 100px;
-    top: 20px;
-    transform: rotate(20deg);
-    color: #67B9FD;
-    z-index: -100; }
-  body p {
-    line-height: 1.5em; }
+  font-family: 'lato', sans-serif;
+  display: flex; }
 
-@media only screen and (min-width: 1250px) {
-  .container {
-    margin: 2em auto;
-    padding: 2em;
-    width: 1400px;
+h1 {
+  font-size: 4em; }
+
+p {
+  line-height: 1.5em;
+  font-size: 13pt; }
+
+.heading-star {
+  position: relative;
+  left: 100px;
+  top: 20px;
+  z-index: -100;
+  transform: rotate(20deg);
+  color: #67B9FD; }
+
+.container {
+  margin: 2em auto;
+  padding: 2em;
+  width: 1400px;
+  box-shadow: rgba(0, 0, 0, 0.3) 10px 10px;
+  border: 15px #c3e4ff solid; }
+  .container .title-container {
+    display: inline-block;
+    margin: 4em; }
+    .container .title-container img {
+      width: 500px !important; }
+  .container .portrait-container {
+    transform: rotate(2.5deg);
+    background-color: #c3e4ff;
     box-shadow: rgba(0, 0, 0, 0.3) 10px 10px;
+    display: inline-block;
     border: 15px #c3e4ff solid; }
-    .container .header {
-      text-align: center;
-      margin: 2em; }
-    .container .title-container {
-      display: inline-block;
-      margin: 4em; }
-    .container .portrait-container {
-      transform: rotate(2.5deg);
-      background-color: #c3e4ff;
+    .container .portrait-container .portrait {
+      transform: rotate(-2.5deg);
+      border: 5px #000 solid; }
+  .container .text-container {
+    font-size: 14pt;
+    margin: 2em 8em;
+    padding: 2em;
+    background-color: #c3e4ff;
+    border: solid #000 5px;
+    box-shadow: rgba(0, 0, 0, 0.3) 10px 10px; }
+    .container .text-container p {
+      margin: 0.5em 0; }
+    .container .text-container:nth-of-type(odd) {
+      transform: rotate(-3deg); }
+      .container .text-container:nth-of-type(odd) .text-container-inner {
+        transform: rotate(3deg); }
+    .container .text-container:nth-of-type(even) {
+      transform: rotate(3deg); }
+      .container .text-container:nth-of-type(even) .text-container-inner {
+        transform: rotate(-3deg); }
+    .container .text-container p.right {
+      width: 400px;
+      float: right; }
+    .container .text-container img {
       box-shadow: rgba(0, 0, 0, 0.3) 10px 10px;
-      display: inline-block;
-      border: 15px #c3e4ff solid; }
-      .container .portrait-container .portrait {
-        transform: rotate(-2.5deg);
-        border: 5px #000 solid; }
-    .container .text-container {
-      font-size: 14pt;
-      margin: 2em 8em;
-      padding: 2em;
-      background-color: #c3e4ff;
-      border: solid #000 5px;
-      box-shadow: rgba(0, 0, 0, 0.3) 10px 10px;
-      transform: rotate(-4deg); }
-      .container .text-container .text-container-inner {
-        transform: rotate(4deg); }
-      .container .text-container p.right {
-        width: 400px;
+      margin-left: 2em;
+      height: 300px;
+      width: 300px; }
+      .container .text-container img.right {
         float: right; }
-      .container .text-container img {
-        margin-left: 2em;
-        height: 300px;
-        width: 300px; }
-        .container .text-container img.right {
-          float: right; }
-        .container .text-container img.left {
-          float: left; }
+      .container .text-container img.left {
+        float: left; }
+    .container .text-container .form {
+      margin: auto;
+      display: block; }
 
-  #clockdiv {
-    text-align: center; }
-    #clockdiv div {
-      display: inline-block;
-      width: 200px;
-      font-weight: bold;
-      font-size: 2.5em; }
-      #clockdiv div div {
-        display: block; }
-      #clockdiv div .smalltext {
-        font-size: 1em; } }
+#clockdiv {
+  text-align: center; }
+  #clockdiv div {
+    display: inline-block;
+    width: 200px;
+    font-weight: bold;
+    font-size: 2.5em; }
+    #clockdiv div div {
+      display: block; }
+    #clockdiv div .smalltext {
+      font-size: 1em; }
+
+iframe {
+  width: 450px;
+  height: 450px; }
+
+@media only screen and (max-width: 1400px) {
+  .container {
+    margin: 1em auto;
+    padding: 0;
+    width: 100%;
+    box-shadow: none;
+    border: none; }
+    .container .title-container {
+      width: 100%;
+      margin: 0;
+      text-align: center; }
+    .container .portrait-container {
+      display: none; }
+    .container img {
+      max-width: 100%; }
+    .container h1 {
+      margin: 1em 0;
+      font-size: 1.8em; }
+    .container .heading-star {
+      position: initial; }
+    .container .text-container {
+      margin: 0em 0em;
+      padding: 0em;
+      background-color: #fff;
+      border: none;
+      box-shadow: none;
+      text-align: center; }
+      .container .text-container:nth-of-type(odd) {
+        transform: rotate(0deg); }
+        .container .text-container:nth-of-type(odd) .text-container-inner {
+          transform: rotate(0deg); }
+      .container .text-container:nth-of-type(even) {
+        transform: rotate(0deg); }
+        .container .text-container:nth-of-type(even) .text-container-inner {
+          transform: rotate(0deg); }
+      .container .text-container p.right {
+        width: initial;
+        float: none; }
+      .container .text-container img {
+        float: none;
+        box-shadow: none;
+        margin: 1em;
+        max-width: 100%;
+        height: auto; }
+        .container .text-container img.right {
+          float: none; }
+        .container .text-container img.left {
+          float: none; }
+      .container .text-container .text-container-inner {
+        text-align: justify;
+        margin: 0 1em; }
+    .container #clockdiv {
+      margin: 2em 0;
+      text-align: center; }
+      .container #clockdiv div {
+        width: 80px;
+        font-size: 1.65em; }
+      .container #clockdiv .smalltext {
+        font-size: 0.5em; }
+    .container iframe {
+      max-width: 100%; } }
