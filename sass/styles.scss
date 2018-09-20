@@ -11,11 +11,21 @@ body {
 
 h1 {
   font-size: 4em;
+  margin: 1em 0;
+}
+
+h2 {
+  font-size: 2.5em;
 }
 
 p {
   line-height: 1.5em;
   font-size: 13pt;
+}
+
+li {
+  list-style-position: inside;
+  line-height: 2;
 }
 
 .heading-star {
@@ -30,16 +40,20 @@ p {
 .container {
   margin: 2em auto;
   padding: 2em;
-  width: 1400px;
+  width: 1200px;
   box-shadow: rgba(0, 0, 0, 0.3) 10px 10px;
   border: 15px #c3e4ff solid;
 
+  .header {
+    text-align: center;
+  }
+
   .title-container {
     img {
-      width: 500px !important;
+      width: 500px;
     }
     display: inline-block;
-    margin: 4em;
+    margin: 4em 0em;
   }
 
   .portrait-container {
@@ -58,7 +72,7 @@ p {
 
   .text-container {
     font-size: 14pt;
-    margin: 2em 8em;
+    margin: 3em 8em;
     padding: 2em;
     background-color: #c3e4ff;
     border: solid #000 5px;
@@ -85,14 +99,14 @@ p {
     }
 
     p.right {
-      width: 400px;
+      width: 300px;
       float: right;
     }
 
     img {
       box-shadow: rgba(0, 0, 0, 0.3) 10px 10px;
       margin-left: 2em;
-      height: 300px;
+      height: auto;
       width: 300px;
 
       &.right {
@@ -129,12 +143,45 @@ p {
   }
 }
 
-iframe {
-  width: 450px;
-  height: 450px;
+iframe.map {
+  width: 400px;
+  height: 400px;
+  box-shadow: rgba(0, 0, 0, 0.3) 10px 10px;
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1200px) {
+  .container {
+    margin: 1em auto;
+    padding: 0;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+
+    .title-container {
+      img {
+        width: 400px;
+      }
+      display: inline-block;
+      margin: 4em 0em;
+    }
+ 
+    .portrait-container {
+      transform: rotate(2.5deg);
+      background-color: #c3e4ff;
+      box-shadow: none;
+      display: inline-block;
+      border: 15px #c3e4ff solid;
+
+      .portrait {
+        width: 200px;
+        height: auto;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1000px) {
   .container {
     margin: 1em auto;
     padding: 0;
@@ -231,6 +278,10 @@ iframe {
 
     iframe {
       max-width: 100%;
+    }
+
+    iframe.map {
+      box-shadow: none;
     }
   }
 }

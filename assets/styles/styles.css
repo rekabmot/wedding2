@@ -8,11 +8,19 @@ body {
   display: flex; }
 
 h1 {
-  font-size: 4em; }
+  font-size: 4em;
+  margin: 1em 0; }
+
+h2 {
+  font-size: 2.5em; }
 
 p {
   line-height: 1.5em;
   font-size: 13pt; }
+
+li {
+  list-style-position: inside;
+  line-height: 2; }
 
 .heading-star {
   position: relative;
@@ -25,14 +33,16 @@ p {
 .container {
   margin: 2em auto;
   padding: 2em;
-  width: 1400px;
+  width: 1200px;
   box-shadow: rgba(0, 0, 0, 0.3) 10px 10px;
   border: 15px #c3e4ff solid; }
+  .container .header {
+    text-align: center; }
   .container .title-container {
     display: inline-block;
-    margin: 4em; }
+    margin: 4em 0em; }
     .container .title-container img {
-      width: 500px !important; }
+      width: 500px; }
   .container .portrait-container {
     transform: rotate(2.5deg);
     background-color: #c3e4ff;
@@ -44,7 +54,7 @@ p {
       border: 5px #000 solid; }
   .container .text-container {
     font-size: 14pt;
-    margin: 2em 8em;
+    margin: 3em 8em;
     padding: 2em;
     background-color: #c3e4ff;
     border: solid #000 5px;
@@ -60,12 +70,12 @@ p {
       .container .text-container:nth-of-type(even) .text-container-inner {
         transform: rotate(-3deg); }
     .container .text-container p.right {
-      width: 400px;
+      width: 300px;
       float: right; }
     .container .text-container img {
       box-shadow: rgba(0, 0, 0, 0.3) 10px 10px;
       margin-left: 2em;
-      height: 300px;
+      height: auto;
       width: 300px; }
       .container .text-container img.right {
         float: right; }
@@ -87,11 +97,33 @@ p {
     #clockdiv div .smalltext {
       font-size: 1em; }
 
-iframe {
-  width: 450px;
-  height: 450px; }
+iframe.map {
+  width: 400px;
+  height: 400px;
+  box-shadow: rgba(0, 0, 0, 0.3) 10px 10px; }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1200px) {
+  .container {
+    margin: 1em auto;
+    padding: 0;
+    width: 100%;
+    box-shadow: none;
+    border: none; }
+    .container .title-container {
+      display: inline-block;
+      margin: 4em 0em; }
+      .container .title-container img {
+        width: 400px; }
+    .container .portrait-container {
+      transform: rotate(2.5deg);
+      background-color: #c3e4ff;
+      box-shadow: none;
+      display: inline-block;
+      border: 15px #c3e4ff solid; }
+      .container .portrait-container .portrait {
+        width: 200px;
+        height: auto; } }
+@media only screen and (max-width: 1000px) {
   .container {
     margin: 1em auto;
     padding: 0;
@@ -151,4 +183,6 @@ iframe {
       .container #clockdiv .smalltext {
         font-size: 0.5em; }
     .container iframe {
-      max-width: 100%; } }
+      max-width: 100%; }
+    .container iframe.map {
+      box-shadow: none; } }
